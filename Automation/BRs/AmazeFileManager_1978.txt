@@ -1,0 +1,30 @@
+Bug Report Title:
+Search Result Title disappears after screen rotation
+
+Bug Report Issue:
+**Describe the bug**
+A clear and concise description of what the bug is.
+
+**To Reproduce**
+Steps to reproduce the behavior:
+1. Go to Amaze file manager
+2. Click on Search button
+3. Try to find a file /folder
+4. Then rotate the device 
+5. Search result tittle fails to reappear
+
+**Expected behavior**
+Search result tittle should reappear
+
+**Screenshots**
+If applicable, add screenshots to help explain your problem.
+
+**Smartphone (please complete the following information):**
+ - Device: [e.g. Samsung A10s]
+ - OS: [e.g. Android 10]
+ - Rooted: [e.g. No]
+ - Version: 3.4.3
+
+
+Comments:
+(No comments found)

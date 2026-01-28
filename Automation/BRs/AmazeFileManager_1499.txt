@@ -1,0 +1,10 @@
+Bug Report Title:
+Back button goes to ".."
+
+Bug Report Issue:
+Pressing back moves you here:
+![screenshot_1541353200](https://user-images.githubusercontent.com/10991116/47967740-855fa700-e03f-11e8-9e71-7a0b2824552e.png)
+
+
+Comments:
+(No comments found)

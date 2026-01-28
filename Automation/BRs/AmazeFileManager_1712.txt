@@ -1,0 +1,24 @@
+Bug Report Title:
+Unhiding hidden files does not show the file (requires a refresh)
+
+Bug Report Issue:
+**Expected behavior**
+
+The file removed from the hidden files list should be immediately visible in the browser. 
+
+**Actual behavior**
+
+The file is not immediately visible. The file is only visible when the user manually triggers a refresh of the current file view. 
+
+**Steps to reproduce** 
+
+1. Select a file.
+1. Tap "Hide".
+1. Tap "Hidden Files" from top right context menu.
+1. Tap "x" on the file to remove from hidden files list.
+1. Tap "Cancel".  
+
+Comments:
+Comment#1:
+I would like to work on this issue.
+---

@@ -1,0 +1,31 @@
+Bug Report Title:
+FTP server cannot be used without WiFi, and there is no prompt
+
+Bug Report Issue:
+**Describe the bug**
+When I use the data network, I can't turn on the FTP server, and there is no prompt. I can only see that the start button is gray. After trying it out, I found that this feature can only be used on WiFi networks.
+
+**To Reproduce**
+Steps to reproduce the behavior:
+1. Install and open AmazeFileManager
+2. Open menu bar
+3. Scroll down to 'FTP server'
+4. Click on 'FTP server'
+5. Unable to click the start button
+
+**Expected behavior**
+Users should be prompted to turn on WiFi when there is no WiFi network, otherwise they don't know why they can't use FTP server
+
+**Screenshots**
+![ezgif com-video-to-gif (3)](https://user-images.githubusercontent.com/15941953/86330075-b6abd280-bc79-11ea-9fb7-4278e97de57e.gif)
+
+**Smartphone (please complete the following information):**
+ - Device: galaxy a6s
+ - OS: Android 8.1.0
+ - Rooted: No
+ - Version: v3.4.3
+
+
+
+Comments:
+(No comments found)

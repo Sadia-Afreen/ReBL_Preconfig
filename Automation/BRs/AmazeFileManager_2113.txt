@@ -1,0 +1,11 @@
+Bug Report Title:
+Spaces turn to "%20" when renaming files
+
+Bug Report Issue:
+Rename a file with no spaces, and add spaces.
+
+
+Comments:
+Comment#1:
+How come test cases didn't pick this up. I thought there were test cases for rename functionality.
+---

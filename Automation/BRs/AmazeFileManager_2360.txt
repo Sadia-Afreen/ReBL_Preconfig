@@ -1,0 +1,13 @@
+Bug Report Title:
+Split apks have broken icons
+
+Bug Report Issue:
+
+[AmazeFileManager.zip](https://github.com/TeamAmaze/AmazeFileManager/files/6137147/AmazeFileManager.zip)
+
+
+![imagen](https://user-images.githubusercontent.com/10991116/111077152-30b17e00-84ce-11eb-8061-829359f6a36f.png)
+
+
+Comments:
+(No comments found)

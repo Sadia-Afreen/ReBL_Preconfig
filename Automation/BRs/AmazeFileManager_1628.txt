@@ -1,0 +1,40 @@
+Bug Report Title:
+[AmazFileManager][v3.3.2]Can not unstall app from app manager
+
+Bug Report Issue:
+<h4>Actual behavior</h4>
+Nothing happening if i click unstall from app manager.
+<h4>Expected behavior</h4>
+Expected that i can unstall app from app manager.
+<h4>How to reproduce</h4>
+<ol>
+<li>Install the apps and open the app</li>
+<li>click navigation bar select "App manger"</li>
+<li>choose any apps you installed from playstore or other plateform</li>
+<li>Just click any trips you created</li>
+<li>See the error</li>
+</ol>
+<h4>Information</h4>
+<ul>
+<li>App version:V3.3.2</li>
+<li>OS:Android 9.0</li>
+<li>Device:Samsung A10</li>
+</ul>
+<h4>Recording Of The Bug</h4>
+<a href="https://youtu.be/­jtnE61e2rvU">https://youtu.be/­jtnE61e2rvU</a>
+
+Comments:
+Comment#1:
+Relevant logcat:
+```
+2019-10-25 22:40:22.984 1278-3459/? I/ActivityTaskManager: START u0 {act=android.intent.action.DELETE dat=package:com.alaskaairlines.android cmp=com.google.android.packageinstaller/com.android.packageinstaller.UninstallerActivity} from uid 10014
+2019-10-25 22:40:23.015 21381-21381/? W/ActivityThread: handleWindowVisibility: no activity for token android.os.BinderProxy@4fb2225
+2019-10-25 22:40:23.021 21381-21381/? E/UninstallerActivity: Uid 10014 does not have android.permission.REQUEST_DELETE_PACKAGES or android.permission.DELETE_PACKAGES
+```
+---
+Comment#2:
+cool but slow progress
+---
+Comment#3:
+Thanks for your patience and the bug report! We really appreciate it.  
+---

@@ -1,0 +1,29 @@
+Bug Report Title:
+Widget: New Note creates infinite new note loop
+
+Bug Report Issue:
+### Expected
+Creating a new note by clicking on the FAB in the notes list widget will open a new blank note. Clicking "back" in the appbar should either close the app or take the user to the notes list. 
+
+### Observed
+Clicking "back" in the appbar creates a new note - ad infinitum 
+
+### Reproduced
+> 1. Tap the "+" FAB from within the notes list widget. The new app will open to a new note screen.
+> 2. Tap the "back" button in the AppBar. Another new note will load. 
+> 3. Continue to tap "back" and observe infinite new note loop.
+
+![new-note-loop](https://user-images.githubusercontent.com/5810477/76473528-fe021080-63b5-11ea-801a-f6f4748bf7cf.gif)
+
+Make|Model|Android Version|App Version
+-|-|-|-
+LG|G5|Android 8.0|2.5-rc-1
+
+
+Comments:
+Comment#1:
+I can't reproduce that behavior with the Pixel or Nova launchers when Simplenote is in recent apps or not.  Which launcher does that device use?  Do you have any developer options enabled (e.g. ***Don't keep activities***)?
+---
+Comment#2:
+@theck13 I'm using the default LG launcher on the G5. I checked and I did have **Don't keep activities** enabled. I disabled and the issue disappeared 👍 
+---

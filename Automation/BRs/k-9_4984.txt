@@ -1,0 +1,118 @@
+Bug Report Title:
+Error during preview text extraction
+
+Bug Report Issue:
+Since the upgrade to 5.719 I have a problem, that new message are not displayed using IMAP to outlook.office365.com (where other clients do show the messages). I looks as if all messages arrived after the upgrade date are not shown. I do not see any error message, the logcat does not pint to any problem either.
+I already remove all data from K9 and re-created the accounts with no success. I also de-installed the app and tried to start from scratch without success.
+I am using K9 on a Samsung SM-A520F, no root, no custom ROM, Android 8.
+
+
+Comments:
+Comment#1:
+I can confirm the problem. On both Samsung S7 and S8 only sporadically single mails are displayed since the last beta channel update. This occurs with IMAP retrieval from web.de and from our own Postfix server.
+---
+Comment#2:
+"It's not working" is not much information to go on. Please provide a debug log. See https://github.com/k9mail/k-9/wiki/LoggingErrors
+---
+Comment#3:
+```
+--------- beginning of main
+10-06 14:15:24.321 17136 17136 D ViewRootImpl@9518cf9[Accounts]: Relayout returned: old=[0,0][1080,1920] new=[0,0][1080,1920] result=0x1 surface={valid=false 0} changed=false
+10-06 14:15:24.399 17136 17136 V Surface : sf_framedrop debug : 0x4f4c, game : false, logging : 0
+10-06 14:15:24.399 17136 17136 D ViewRootImpl@9518cf9[Accounts]: Relayout returned: old=[0,0][1080,1920] new=[0,0][1080,1920] result=0x7 surface={valid=true 531728535552} changed=true
+10-06 14:15:24.406 17136 17225 D mali_winsys: EGLint new_window_surface(egl_winsys_display *, void *, EGLSurface, EGLConfig, egl_winsys_surface **, egl_color_buffer_format *, EGLBoolean) returns 0x3000,  [1080x1920]-format:1
+10-06 14:15:24.406 17136 17225 D OpenGLRenderer: eglCreateWindowSurface = 0x7be3011b80
+10-06 14:15:24.471 17136 17136 D ViewRootImpl@9518cf9[Accounts]: MSG_WINDOW_FOCUS_CHANGED 1
+10-06 14:15:24.488 17136 17136 V InputMethodManager: Starting input: tba=android.view.inputmethod.EditorInfo@e7f06bf nm : com.fsck.k9 ic=null
+10-06 14:15:24.488 17136 17136 I InputMethodManager: startInputInner - mService.startInputOrWindowGainedFocus
+10-06 14:15:39.749 17136 17136 D ViewRootImpl@9518cf9[Accounts]: ViewPostIme pointer 0
+10-06 14:15:39.910 17136 17136 D ViewRootImpl@9518cf9[Accounts]: ViewPostIme pointer 1
+10-06 14:15:43.163 17136 17179 I zygote64: Deoptimizing void org.apache.james.mime4j.parser.MimeStreamParser.parse(java.io.InputStream) due to JIT inline cache
+10-06 14:15:45.272 17136 17179 I zygote64: Deoptimizing void org.apache.james.mime4j.parser.MimeStreamParser.parse(java.io.InputStream) due to JIT inline cache
+10-06 14:15:45.272 17136 17179 I zygote64: Deoptimizing void com.fsck.k9.mail.internet.MimeMessage$MimeMessageBuilder.field(org.apache.james.mime4j.stream.Field) due to JIT inline cache
+10-06 14:16:09.858 17136 17136 V InputMethodManager: Starting input: tba=android.view.inputmethod.EditorInfo@5246744 nm : com.fsck.k9 ic=null
+10-06 14:16:09.858 17136 17136 I InputMethodManager: startInputInner - mService.startInputOrWindowGainedFocus
+10-06 14:16:09.908 17136 17136 W IInputConnectionWrapper: getExtractedText on inactive InputConnection
+10-06 14:16:09.909 17136 17136 W IInputConnectionWrapper: getTextBeforeCursor on inactive InputConnection
+10-06 14:16:12.290 17136 17136 D ViewRootImpl@9518cf9[Accounts]: performDraw() was skipped by AOD_SHOW_STATE... DisplayState=3
+10-06 14:16:12.355 17136 17136 D ViewRootImpl@9518cf9[Accounts]: MSG_WINDOW_FOCUS_CHANGED 0
+10-06 14:16:12.390 17136 17136 D ViewRootImpl@9518cf9[Accounts]: performDraw() was skipped by AOD_SHOW_STATE... DisplayState=3
+10-06 14:16:14.938 17136 17225 D OpenGLRenderer: eglDestroySurface = 0x7be3011b80
+10-06 14:16:14.949 17136 17136 D ViewRootImpl@9518cf9[Accounts]: Relayout returned: old=[0,0][1080,1920] new=[0,0][1080,1920] result=0x5 surface={valid=false 0} changed=true
+10-06 14:16:14.971 17136 17136 D ViewRootImpl@9518cf9[Accounts]: Relayout returned: old=[0,0][1080,1920] new=[0,0][1080,1920] result=0x1 surface={valid=false 0} changed=false
+10-06 14:16:38.828 17136 17136 V Surface : sf_framedrop debug : 0x4f4c, game : false, logging : 0
+10-06 14:16:38.829 17136 17136 D ViewRootImpl@9518cf9[Accounts]: Relayout returned: old=[0,0][1080,1920] new=[0,0][1080,1920] result=0x7 surface={valid=true 531728535552} changed=true
+10-06 14:16:38.887 17136 17225 D mali_winsys: EGLint new_window_surface(egl_winsys_display *, void *, EGLSurface, EGLConfig, egl_winsys_surface **, egl_color_buffer_format *, EGLBoolean) returns 0x3000,  [1080x1920]-format:1
+10-06 14:16:38.887 17136 17225 D OpenGLRenderer: eglCreateWindowSurface = 0x7be3011dc0
+10-06 14:16:38.981 17136 17136 D ViewRootImpl@9518cf9[Accounts]: MSG_RESIZED_REPORT: frame=Rect(0, 0 - 1080, 1920) ci=Rect(0, 72 - 0, 0) vi=Rect(0, 72 - 0, 0) or=1
+10-06 14:16:41.483 17136 17136 D ViewRootImpl@9518cf9[Accounts]: MSG_WINDOW_FOCUS_CHANGED 1
+10-06 14:16:41.497 17136 17136 V InputMethodManager: Starting input: tba=android.view.inputmethod.EditorInfo@e1bdfbe nm : com.fsck.k9 ic=null
+10-06 14:16:41.497 17136 17136 I InputMethodManager: startInputInner - mService.startInputOrWindowGainedFocus
+10-06 14:16:42.276 17136 17136 D ViewRootImpl@9518cf9[Accounts]: ViewPostIme pointer 0
+10-06 14:16:42.431 17136 17136 D ViewRootImpl@9518cf9[Accounts]: ViewPostIme pointer 1
+10-06 14:16:45.233 17136 17141 I zygote64: Do partial code cache collection, code=504KB, data=309KB
+10-06 14:16:45.237 17136 17141 I zygote64: After code cache collection, code=483KB, data=300KB
+10-06 14:16:45.237 17136 17141 I zygote64: Increasing code cache capacity to 2MB
+```
+---
+Comment#4:
+It doesn't look like you enabled debug logging in K-9 Mail's settings as described in the instructions.
+---
+Comment#5:
+Ups. sorry...
+
+
+[k9_debug.txt](https://github.com/k9mail/k-9/files/5333785/k9_debug.txt)
+
+---
+Comment#6:
+Thanks. The problem is unrelated to IMAP. It's a bug in the code that extracts the preview text.
+
+Developer TODO:
+- Find and fix the underlying bug
+- Catch unexpected errors during preview text extraction and carry on with the message sync
+
+```
+com.fsck.k9.mail.MessagingException: Error appending message: [message subject]
+	at com.fsck.k9.mailstore.LocalFolder.saveMessage(LocalFolder.java:1210)
+	at com.fsck.k9.mailstore.LocalFolder.access$1100(LocalFolder.java:75)
+	at com.fsck.k9.mailstore.LocalFolder$13.doDbWork(LocalFolder.java:1049)
+	at com.fsck.k9.mailstore.LocalFolder$13.doDbWork(LocalFolder.java:1044)
+	at com.fsck.k9.mailstore.LockableDatabase.execute(LockableDatabase.java:273)
+	at com.fsck.k9.mailstore.LocalFolder.appendMessages(LocalFolder.java:1044)
+	at com.fsck.k9.mailstore.LocalFolder.appendMessages(LocalFolder.java:971)
+	at com.fsck.k9.mailstore.K9BackendFolder.savePartialMessage(K9BackendFolder.kt:227)
+	at com.fsck.k9.backend.imap.ImapSync.downloadPartial(ImapSync.kt:692)
+	at com.fsck.k9.backend.imap.ImapSync.downloadLargeMessages(ImapSync.kt:581)
+	at com.fsck.k9.backend.imap.ImapSync.downloadMessages(ImapSync.kt:380)
+	at com.fsck.k9.backend.imap.ImapSync.synchronizeMailboxSynchronous(ImapSync.kt:189)
+	at com.fsck.k9.backend.imap.ImapSync.sync(ImapSync.kt:32)
+	at com.fsck.k9.backend.imap.ImapBackend.sync(ImapBackend.kt:50)
+	at com.fsck.k9.controller.MessagingController.syncFolder(MessagingController.java:658)
+	at com.fsck.k9.controller.MessagingController.synchronizeMailboxSynchronous(MessagingController.java:615)
+	at com.fsck.k9.controller.MessagingController.lambda$synchronizeMailbox$3$MessagingController(MessagingController.java:600)
+	at com.fsck.k9.controller.-$$Lambda$MessagingController$Xx9NETpzWcoXEDzz-o_rzXywOEM.run(Unknown Source:8)
+	at com.fsck.k9.controller.MessagingController.runInBackground(MessagingController.java:217)
+	at com.fsck.k9.controller.MessagingController.access$000(MessagingController.java:111)
+	at com.fsck.k9.controller.MessagingController$1.run(MessagingController.java:160)
+	at java.lang.Thread.run(Thread.java:764)
+Caused by: java.lang.IllegalArgumentException: index: -1; length: 0
+	at com.fsck.k9.message.html.EmailSection.get(EmailSection.kt:20)
+	at com.fsck.k9.message.html.EmailSection.charAt(EmailSection.kt:8)
+	at com.fsck.k9.message.extractors.PreviewTextExtractor.getQuoteHeaderIndex(PreviewTextExtractor.kt:105)
+	at com.fsck.k9.message.extractors.PreviewTextExtractor.isQuoteHeaderOnly(PreviewTextExtractor.kt:96)
+	at com.fsck.k9.message.extractors.PreviewTextExtractor.extractUnquotedText(PreviewTextExtractor.kt:76)
+	at com.fsck.k9.message.extractors.PreviewTextExtractor.stripTextForPreview(PreviewTextExtractor.kt:33)
+	at com.fsck.k9.message.extractors.PreviewTextExtractor.extractPreview(PreviewTextExtractor.kt:17)
+	at com.fsck.k9.message.extractors.MessagePreviewCreator.createPreview(MessagePreviewCreator.java:33)
+	at com.fsck.k9.mailstore.LocalFolder.saveMessage(LocalFolder.java:1131)
+	... 21 more
+```
+---
+Comment#7:
+This is fixed in [K-9 Mail 5.720](https://github.com/k9mail/k-9/releases/tag/5.720).
+---
+Comment#8:
+Works  for me with 5.720
+Thanks a lot for the quick fix
+---

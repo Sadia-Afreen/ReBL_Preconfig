@@ -1,0 +1,21 @@
+Bug Report Title:
+FAB button is visible when screen is rotated in FtpServerFragment
+
+Bug Report Issue:
+**Describe the bug**
+FAB button is invisible when you switch to FTP server but comes back once you rotate the screen.
+
+**Screenshots**
+If applicable, add screenshots to help explain your problem.
+
+**Smartphone (please complete the following information):**
+ - Device: Oneplus 6t
+ - OS: Android 10
+ - Version: release/3.5
+
+**Additional context**
+Add any other context about the problem here.
+
+
+Comments:
+(No comments found)

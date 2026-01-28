@@ -1,0 +1,25 @@
+Bug Report Title:
+SnapdragonGallery could not sync the picture or video name after rename by Amaza
+
+Bug Report Issue:
+1.Take photos or video by system camera,
+2.Enter the Amaza filemanager,rename the pictures or videos of step 1.
+3.After rename the file,gointo gallery app,the file name still no change and file open fail.
+
+
+
+Comments:
+Comment#1:
+I found fragment menu as follow could not update name after use rename
+Quick access
+Recent files
+Images Videos
+
+should register an broadcast to update the rename status?
+
+Thanks
+hover
+---
+Comment#2:
+@hoverPaul please test #1478 and report
+---

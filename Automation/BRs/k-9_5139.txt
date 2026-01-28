@@ -1,0 +1,52 @@
+Bug Report Title:
+Unified Inbox/Background not refreshing mails
+
+Bug Report Issue:
+There are similar issues reported [in the forum](https://forum.k9mail.app/t/my-k9-on-android-only-fetch-emails-when-i-open-it/706) and as an [issue](https://github.com/k9mail/k-9/issues/4892)
+
+However, they are only similar and not my exact issue.
+
+
+**Describe the bug**
+K9 does not fetch email in the background nor from the unified inbox. To recieve new mails, i have to go to each account's inbox and refresh the account there.
+
+**To Reproduce**
+Steps to reproduce the behavior:
+1. Go to 'Unified Inbox'
+2. Pull Down - Nothing happens after the loading-circle finishes
+3. Go to 'Account Name'
+4. Pull Down - Mail show up after cirlce is done
+
+**Expected behavior**
+Email are beeing fetched when refreshed either in the background or in Unified Inbox
+
+
+**Environment (please complete the following information):**
+ - K-9 Mail version: 5.728
+ - Android version: 11, LineageOS
+ - Device: S9
+ - Account type: IMAP
+
+**Additional context**
+Background Sync is enabled (I assume they renamed that for 11)
+Folder Polling is set to 15 minutes for every account
+Battery Optimizations are disabled
+
+**Logs**
+While manually refreshing Unified Inbox:
+
+> /com.fsck.k9 V/TracingPowerManager$TracingWakeLock: TracingWakeLock for tag K9 MessagingController.checkMail / id 0: Create
+> /com.fsck.k9 V/TracingPowerManager$TracingWakeLock: TracingWakeLock for tag K9 MessagingController.checkMail / id 0 for 120000 ms: acquired
+> /com.fsck.k9 I/MessagingController: Running command 'checkMail', seq = 0 (background priority)
+> /com.fsck.k9 I/MessagingController: Starting mail check
+> /com.fsck.k9 I/MessagingController:  Command 'checkMail' completed
+> /com.fsck.k9 I/MessagingController: Running command 'finalize sync', seq = 1 (background priority)
+> /com.fsck.k9 I/MessagingController: Finished mail sync
+> /com.fsck.k9 V/TracingPowerManager$TracingWakeLock: TracingWakeLock for tag K9 MessagingController.checkMail / id 0: releasing after 1 ms, timeout = 120000 ms
+> /com.fsck.k9 I/MessagingController:  Command 'finalize sync' completed
+> 
+
+Comments:
+Comment#1:
+Exactly same here. LineageOS android 9
+---

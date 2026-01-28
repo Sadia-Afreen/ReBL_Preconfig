@@ -1,0 +1,47 @@
+Bug Report Title:
+Can't install apks after updating to Android 10
+
+Bug Report Issue:
+I can no longer install apps from apk files in Amaze after updating to Android 10. When I try to all I get is a toast message that just says "Error". I've checked and Amaze does have permission to install apps. This is on Amaze 3.3.4.
+
+Comments:
+Comment#1:
+I don't think Amaze is the only application with this problem. I suspect it is something related to Android. If I download an APK using my web browser and tap on the downloaded file, it asks with what application I would like to open it with and shows a list instead of starting the package installer. However none of the listed options seem to have anything to do with installing a package.
+
+It also doesn't say the app doesn't have permission to install apps, something I expect to see.
+![Screenshot_20191108-022126](https://user-images.githubusercontent.com/17702902/68441555-cea48280-01ce-11ea-8f9f-e2c563bdb45a.jpg)
+---
+Comment#2:
+This might help 
+https://android.googlesource.com/platform/development/+/master/samples/ApiDemos/src/com/example/android/apis/content/InstallApkSessionApi.java
+
+```
+2019-11-10 20:54:34.822 14742-14742/com.amaze.filemanager.debug W/System.err: android.content.ActivityNotFoundException: No Activity found to handle Intent { act=android.intent.action.INSTALL_PACKAGE dat=file:///storage/emulated/0/app_backup/Adobe Acrobat_com.adobe.reader.apk }
+2019-11-10 20:54:34.822 14742-14742/com.amaze.filemanager.debug W/System.err:     at android.app.Instrumentation.checkStartActivityResult(Instrumentation.java:2241)
+2019-11-10 20:54:34.822 14742-14742/com.amaze.filemanager.debug W/System.err:     at android.app.Instrumentation.execStartActivity(Instrumentation.java:1895)
+2019-11-10 20:54:34.822 14742-14742/com.amaze.filemanager.debug W/System.err:     at android.app.Activity.startActivityForResult(Activity.java:5205)
+2019-11-10 20:54:34.822 14742-14742/com.amaze.filemanager.debug W/System.err:     at androidx.fragment.app.FragmentActivity.startActivityForResult(FragmentActivity.java:767)
+2019-11-10 20:54:34.822 14742-14742/com.amaze.filemanager.debug W/System.err:     at android.app.Activity.startActivityForResult(Activity.java:5163)
+2019-11-10 20:54:34.822 14742-14742/com.amaze.filemanager.debug W/System.err:     at androidx.fragment.app.FragmentActivity.startActivityForResult(FragmentActivity.java:754)
+2019-11-10 20:54:34.822 14742-14742/com.amaze.filemanager.debug W/System.err:     at android.app.Activity.startActivity(Activity.java:5534)
+2019-11-10 20:54:34.822 14742-14742/com.amaze.filemanager.debug W/System.err:     at android.app.Activity.startActivity(Activity.java:5502)
+2019-11-10 20:54:34.822 14742-14742/com.amaze.filemanager.debug W/System.err:     at com.amaze.filemanager.utils.files.FileUtils.installApk(FileUtils.java:428)
+2019-11-10 20:54:34.822 14742-14742/com.amaze.filemanager.debug W/System.err:     at com.amaze.filemanager.ui.dialogs.GeneralDialogCreation.lambda$showPackageDialog$24(GeneralDialogCreation.java:916)
+2019-11-10 20:54:34.822 14742-14742/com.amaze.filemanager.debug W/System.err:     at com.amaze.filemanager.ui.dialogs.-$$Lambda$GeneralDialogCreation$rS2BlSukyaVSm-W-eWqopk3AqDk.onClick(Unknown Source:4)
+2019-11-10 20:54:34.822 14742-14742/com.amaze.filemanager.debug W/System.err:     at com.afollestad.materialdialogs.MaterialDialog.onClick(MaterialDialog.java:410)
+2019-11-10 20:54:34.822 14742-14742/com.amaze.filemanager.debug W/System.err:     at android.view.View.performClick(View.java:7201)
+2019-11-10 20:54:34.822 14742-14742/com.amaze.filemanager.debug W/System.err:     at android.view.View.performClickInternal(View.java:7170)
+2019-11-10 20:54:34.822 14742-14742/com.amaze.filemanager.debug W/System.err:     at android.view.View.access$3500(View.java:806)
+2019-11-10 20:54:34.822 14742-14742/com.amaze.filemanager.debug W/System.err:     at android.view.View$PerformClick.run(View.java:27562)
+2019-11-10 20:54:34.822 14742-14742/com.amaze.filemanager.debug W/System.err:     at android.os.Handler.handleCallback(Handler.java:883)
+2019-11-10 20:54:34.822 14742-14742/com.amaze.filemanager.debug W/System.err:     at android.os.Handler.dispatchMessage(Handler.java:100)
+2019-11-10 20:54:34.822 14742-14742/com.amaze.filemanager.debug W/System.err:     at android.os.Looper.loop(Looper.java:214)
+2019-11-10 20:54:34.823 14742-14742/com.amaze.filemanager.debug W/System.err:     at android.app.ActivityThread.main(ActivityThread.java:7682)
+2019-11-10 20:54:34.823 14742-14742/com.amaze.filemanager.debug W/System.err:     at java.lang.reflect.Method.invoke(Native Method)
+2019-11-10 20:54:34.823 14742-14742/com.amaze.filemanager.debug W/System.err:     at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:516)
+2019-11-10 20:54:34.823 14742-14742/com.amaze.filemanager.debug W/System.err:     at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:950)
+```
+---
+Comment#3:
+Related #1718.
+---

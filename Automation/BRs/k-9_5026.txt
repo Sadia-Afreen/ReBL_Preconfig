@@ -1,0 +1,52 @@
+Bug Report Title:
+Unable to delete messages from inbox
+
+Bug Report Issue:
+**Describe the bug**
+When trying to delete messages, messages disappear, but are not moved into Trash directory.
+When re-opening k-9, deleted messages still appear in inbox.
+
+Please note that it could also happen with messages from other directory ( I didn't test it)
+
+**To Reproduce**
+Steps to reproduce the behavior:
+1. Open k-9 (unified inbox in my case)
+2. Select one or many messages
+3. Delete them
+4. Quit k-9
+5. Re-open k-9
+6. Messages are still in inbox
+
+**Expected behavior**
+Deleted messages should be visible in Trash directory and not in inbox anymore
+
+**Environment (please complete the following information):**
+ - K-9 Mail version: 5.722 (beta)
+ - Android version: 11
+ - Device: Google Pixel 4a
+ - Account type: IMAP
+
+**Additional context**
+Add any other context about the problem here.
+
+**Logs**
+[k9-mail.log.txt](https://github.com/k9mail/k-9/files/5434913/k9-mail.log.txt)
+
+Comments:
+Comment#1:
+Thanks for the debug log :+1:
+
+The problem occurs when trying to move a message not containing a `Message-ID` header field.
+---
+Comment#2:
+Make sense: most, if not all, impacted messages are spam.
+
+Thanks for the quick answer and fix ! :ok_hand: 
+---
+Comment#3:
+Is there already a plan when the next beta release will be published as this issue gets more and more annoying each day.
+Many thanks in advance.
+---
+Comment#4:
+Thanks for your work, @cketti :-)
+---

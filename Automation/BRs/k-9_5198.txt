@@ -1,0 +1,46 @@
+Bug Report Title:
+drawer header inconsistent with custom default account
+
+Bug Report Issue:
+**Describe the bug**
+As soon as the default account is set to something other than the first account, the app initializes with default account values but the drawer header shows the first account as active.
+
+**To Reproduce**
+Steps to reproduce the behavior:
+1. Configure multiple accounts
+2. In Settings -> Accounts: select an account (except the first)
+3. check "default account" in general settings (of that account from step 2)
+4. restart the app
+
+Now the app opens with folder list and color of the default account but the drawer header (icon and email) still shows the first as the active one. This is super confusing.
+
+**Expected behavior**
+Folder list, color, icon and email should be set from the default account values.
+
+**Screenshots**
+My default account is the orange one (gmail address). When starting the app I get this view:
+![image](https://user-images.githubusercontent.com/9994218/110349705-3f61e600-8033-11eb-8ab0-eda474ea144d.png)
+As you see, everything is orange, the folders begin with "gmail/" but the icon is blue and the email is not the gmail one.
+After doing a manual account swith, I see the correct view:
+![image](https://user-images.githubusercontent.com/9994218/110350075-a8495e00-8033-11eb-9344-dfa9c67c228f.png)
+
+
+
+**Environment (please complete the following information):**
+ - K-9 Mail version: [5.732]
+ - Android version: [10]
+ - Device: [Huawei P20 Pro]
+ - Account type: [IMAP]
+
+
+Comments:
+Comment#1:
+I also have this problem. It is a new problem. I think since last update : 5.7.32, and not before. 
+---
+Comment#2:
+After a screenlock, for instance, I also always endup with folder and message list showing the last used account, but the drawer header shows icon, backgroud and email of the first account. So it mismatches everytime.
+---
+Comment#3:
+Ever since I updated from v5.730 to v5.732 I've had this bug.
+
+---

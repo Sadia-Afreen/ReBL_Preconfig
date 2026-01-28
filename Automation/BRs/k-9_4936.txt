@@ -1,0 +1,48 @@
+Bug Report Title:
+User selected Account is lost on screen rotation
+
+Bug Report Issue:
+**Describe the bug**
+User-selected account is lost on screen rotation when setting up an 'unread widget'.
+
+**To Reproduce**
+1. Go to the home screen and create 'unread widget'.
+2. Click on 'Account' and select user mail-box.
+3. Rotate the device or any kind of config changes.
+4. The selected account is lost.
+
+**Expected behavior**
+The app should retain the user-selected account.
+
+**Screenshots**
+![image](https://user-images.githubusercontent.com/1823376/92529936-47ee7680-f1e0-11ea-8866-09786d90a875.png)
+
+
+**Environment (please complete the following information):**
+ - K-9 Mail version:  5.6
+ - Android version: 8.1.0
+ - Device: Nexus 5X
+ - Account type:  IMAP, POP3
+
+
+Comments:
+Comment#1:
+The problem is that we're not saving state in `UnreadWidgetConfigurationFragment`. `selectedAccountUuid` and `selectedFolderId` should be saved in `onSaveInstanceState()` and restored in either `onRestoreInstanceState()` or `onCreatePreferencesFix()`.
+---
+Comment#2:
+Can I work on this issue?
+
+---
+Comment#3:
+@starboi02: Sure. Go ahead.
+---
+Comment#4:
+Thanks @cketti 
+---
+Comment#5:
+@starboi02 I believe I have a working solution to this issue I was just going to PR, but if you prefer I can leave it and go find something else, let you implement 
+
+Sorry I should have commented when I started looking at it!
+
+Edit: I opened the PR for now, but lmk what you think the best path forward is.
+---

@@ -1,0 +1,47 @@
+Bug Report Title:
+After giving storage permission normally, rotating the screen and clicking the back button will cause you to be unable to use amazefilemanager normally
+
+Bug Report Issue:
+**Describe the bug**
+After giving storage permission normally, rotating the screen and clicking the back button will prevent you from using the app normally
+
+**To Reproduce**
+Steps to reproduce the behavior:
+1. Install and open AmazeFileManager
+2. Click on "ALWAYS ALLOW" to give storage permission
+3. Rotate the screen
+4. Click the back button of the phone
+5. The displayed file will be empty as if I didn't have storage access
+
+**Expected behavior**
+I can still see my files and use AmazeFileManager normally
+
+**Consequence**
+When this problem occurs, I will never see my files in AmazeFileManager no matter how I restart the application. I had to re install AmazeFileManager to record this error
+
+**Screenshots**
+![without_permission](https://user-images.githubusercontent.com/15941953/86327217-78acaf80-bc75-11ea-802e-f18cb2632f04.gif)
+
+**Smartphone (please complete the following information):**
+ - Device: galaxy a6s
+ - OS: Android 8.1.0
+ - Rooted: No
+ - Version: v3.4.3
+
+**Additional context**
+I also made some additional attempts. I found that if you manually open the storage permission of AmazeFileManager in the system settings before opening AmazeFileManager, this error will not occur, as shown below. Therefore, I think the reason for the error should be related to the permissions.
+![with_permission](https://user-images.githubusercontent.com/15941953/86327371-c75a4980-bc75-11ea-8d29-9db2985d7f01.gif)
+
+
+
+
+Comments:
+Comment#1:
+Perhaps fixed by #1902? Please wait for the next 3.4 release which shall happen soon.
+
+Although marked as duplicate, I'm leaving this open until the next 3.4 maintenance release is out.
+---
+Comment#2:
+I think this is a separate issue. This happens for one more flow as well, I'll list it here.
+ Let me pick this up.
+---

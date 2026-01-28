@@ -1,0 +1,43 @@
+Bug Report Title:
+Moving does not update MediaScanner
+
+Bug Report Issue:
+**Describe the bug**
+After moving an image, the old image still shows in gallery. Clicking on it results in _Failed to Load_ error
+
+**To Reproduce**
+Steps to reproduce the behavior:
+1. Cut an Image File
+2. Paste it somewhere else
+3. See in Gallery
+
+**Expected behavior**
+The old image disappears from gallery
+
+**Smartphone (please complete the following information):**
+ - Device: Realme Narzo 20A
+ - OS: Android 10
+ - Rooted: No
+ - Version: 3.5.0
+
+
+Comments:
+Comment#1:
+@EmmanuelMess Could I work on this issue? I'm not an expert! So, with all your guidance...
+---
+Comment#2:
+Sure
+You can join our telegram channel and discuss there if you have any doubts
+t.me/AmazeFileManager
+---
+Comment#3:
+@VishnuSanal  can you please check this should've been fixed.
+---
+Comment#4:
+The moving works fine :) But, something else is broken!
+
+I tried moving an image from one folder to another one - and then from there to the root folder. It got updated instantly in the gallery. After that, I deleted the image. But then, the record popped up in the gallery at these three positions!! But, opening them gives me the image not found screen as usual.
+---
+Comment#5:
+@VishnuSanal That's not our problem now. Is it
+---

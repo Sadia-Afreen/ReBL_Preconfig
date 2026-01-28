@@ -1,0 +1,49 @@
+Bug Report Title:
+ Screen rotation when AmazeFileManager requests permission will cause AmazeFileManager black screen
+
+Bug Report Issue:
+**Describe the bug**
+Screen rotation when  AmazeFileManager requests permission will cause AmazeFileManager to get stuck and then black screen
+
+**To Reproduce**
+Steps to reproduce the behavior:
+1. Install AmazeFileManager and open app
+2. The permission request box appears
+3. Rotate screen
+4. Black Screen
+
+**Expected behavior**
+No black screen and can accept permissions
+
+**Screenshots**
+Black screen appears
+
+**Smartphone (please complete the following information):**
+ - Device: HUAWEI nova 5 pro
+ - OS: EMUI 9.1.1
+ - Rooted: No
+ - Version: v3.4.3
+
+**Additional context**
+Add any other context about the problem here.
+[SVID_20200507_152420_1.zip](https://github.com/TeamAmaze/AmazeFileManager/files/4591397/SVID_20200507_152420_1.zip)
+
+
+Comments:
+Comment#1:
+Hello，any update about this issue？It would be really appreciated to get your concern on this.
+---
+Comment#2:
+Yes, the same problem is reproducible on rooted Fairphone 3 running LineageOS 16.0 GSI. Sorry but we all have been busy at our day time work, solving problems may take longer time.
+
+Anyway, some references regarding such problem to start with: [here](https://stackoverflow.com/questions/32624316/android-black-screen-comes-when-screen-rotates), [here](https://stackoverflow.com/questions/5913130/dont-reload-application-when-orientation-changes) and [here](https://stackoverflow.com/questions/23271464/how-to-avoid-black-screen-when-changing-orientation-of-device-in-android/23272279).
+---
+Comment#3:
+OK, thank you for your kind reply!
+---
+Comment#4:
+Thank you for the fix! It's greatly appreciated :)
+---
+Comment#5:
+Thanks for reporting about it.
+---

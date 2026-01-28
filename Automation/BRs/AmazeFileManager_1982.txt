@@ -1,0 +1,28 @@
+Bug Report Title:
+Navigation drawer doesn't preserve selected item on orientation change
+
+Bug Report Issue:
+**Describe the bug**
+Navigation drawer doesn't preserve selected item on orientation change
+
+**To Reproduce**
+Steps to reproduce the behavior:
+Select any item in navigation drawer and rotate the screen.
+The selected item resets to whatever path is selected on second tab (if it's in bookmarks) or internal storage.
+
+**Expected behavior**
+Navigation drawer should have exact item selected. Whether it's FTP or any bookmark.
+
+**Screenshots**
+If applicable, add screenshots to help explain your problem.
+
+**Smartphone (please complete the following information):**
+ - Device: Oneplus 6t
+ - OS: Android 10
+
+**Additional context**
+Add any other context about the problem here.
+
+
+Comments:
+(No comments found)

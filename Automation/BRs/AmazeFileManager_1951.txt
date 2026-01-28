@@ -1,0 +1,31 @@
+Bug Report Title:
+OTG storage not visible in Amaze on Android >= N
+
+Bug Report Issue:
+**Describe the bug**
+Cannot see the OTG storage device in the drawer when plugged in.
+
+**To Reproduce**
+Steps to reproduce the behavior:
+1. Plug in the USB storage with OTG cable
+2. Open Amaze
+3. Open drawer
+4. OTG device not visible
+
+**Expected behavior**
+OTG device should be visible and accessible from within Amaze.
+
+**Smartphone (please complete the following information):**
+ - Device: Fairphone 3
+ - OS: LineageOS 16.0 (9.0)
+ - Rooted: Yes
+ - Version: `release/3.5` branch
+
+**Additional context**
+Should be happening on Android >= N too.
+
+
+Comments:
+Comment#1:
+Is this not to be closed?
+---

@@ -1,0 +1,46 @@
+Bug Report Title:
+Link without https is detected but not opening in browser when the action icon is clicked
+
+Bug Report Issue:
+<!--
+Please, be as descriptive as possible.  Issues lacking detail, or for any other reason than to report a bug, may be closed without action.
+-->
+When typing a potential link in the note, something like `wp.com`, the link is autodetected and the word is underlined. When taping on it, the toolbar above displays three action buttons, the first being the one to open the link in the browser. When you tap that icon, the link doesn't open in the browser.
+
+There is no issue with full links that do contain `https://` such as `https://wp.com`.
+
+![](https://d.pr/i/ScrGcf+)
+_Link: https://d.pr/i/ScrGcf_
+
+### Expected
+<!--
+***(Required)*** Add a concise description of what you expected.
+-->
+When tapping the icon for opening in the browser, it should open the link in the browser, just like it happens for full links that do contain `https://` such as `https://wp.com`
+### Observed
+<!--
+***(Required)*** Add a concise description of what you observed.
+-->
+When taping on the autodetected link (without `https://`), the toolbar above displays three action buttons, the first being the one to open the link in the browser. When you tap that icon, the link doesn't open in the browser.
+
+https://user-images.githubusercontent.com/39308239/106300686-79cfaa80-625f-11eb-9765-13c663233205.mp4
+
+### Reproduced
+
+1. Type a potential link in the note, something like `wp.com`, the link will be autodetected and the word underlined. 
+2. When taping on it, the toolbar above displays three action buttons, the first being the one to open the link in the browser. 
+3. When you tap that icon, the link doesn't open in the browser.
+
+### Device
+
+Device Make: Xiaomi
+Device Model: Mi A1
+Android Version: 9
+Simplenote Version: 2.14 (127)
+
+#dogfood #manualtesting
+
+Comments:
+Comment#1:
+[testing] fix/feature verified on Samsung A31 | Android 10 | Simplenote 2.17-rc-1
+---

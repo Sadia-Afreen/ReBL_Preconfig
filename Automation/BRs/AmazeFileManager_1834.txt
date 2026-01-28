@@ -1,0 +1,39 @@
+Bug Report Title:
+When compress, the archive created has a password
+
+Bug Report Issue:
+**Describe the bug**
+When Amaze creates it set an (unkown) password which prevent from extracting the archive later on (with Amaze or on Windows 10 with default programs and 7zip). 
+
+**To Reproduce**
+Steps to reproduce the behavior:
+1. Go to any folder and select some files
+2. Click on Compress (from the menu top right)
+3. Then select the archive and click extract
+4. Amaze ask for a password even though none was set when compressing
+
+**Expected behavior**
+I should be able to extract the archive.
+
+**Smartphone (please complete the following information):**
+ - Device: Redmi 7A
+ - OS: Miui 11 (Global stable) based on Android 9
+ - Rooted: No
+ - Version of Amaze: 3.4.2
+
+
+
+
+Comments:
+Comment#1:
+#1825 should have fixed this. However this requires testing with master branch, or wait for next release to come out.
+---
+Comment#2:
+Thanks a lot. I will wait for the next release and let you know. 
+---
+Comment#3:
+Will launch a new hotfix soon
+---
+Comment#4:
+I got the new update and... it's working! Thanks a lot!
+---

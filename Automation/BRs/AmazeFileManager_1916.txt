@@ -1,0 +1,17 @@
+Bug Report Title:
+Documents shortcut does not show any files
+
+Bug Report Issue:
+Amaze has shortcuts for recent files, images, videos, audio, APKs and documents. The documents shortcut does not show any files. All other shortcuts work as they should.
+
+Phone: Xiaomi Mi 9T Pro
+OS: MIUI 12
+Amaze version: v3.4.3
+
+Comments:
+Comment#1:
+@VishalNehra  @TranceLove I see that the click / tap is handled onNavigationItemSelected in CustomNavigationView. But I am not able to get the flow where is the logic for selecting the contents within it ? 
+---
+Comment#2:
+@VishalNehra @TranceLove I think I got the flow. Thanks guys 
+---

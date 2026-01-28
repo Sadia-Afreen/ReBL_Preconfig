@@ -1,0 +1,83 @@
+Bug Report Title:
+Disney+ html mail - padding issue
+
+Bug Report Issue:
+**Describe the bug**
+There is a padding at the left and bottom of the mail. Maybe also at the top. These paddings shouldn't be there (atleast not for an html email, maybe ìt's default css?)
+[disney+.zip](https://github.com/k9mail/k-9/files/5250639/disney%2B.zip)
+
+If I display the same html mail in Firefox (Desktop) oder Thunderbird, then there is no padding.
+
+I don't have any preferance regarding "Disney+ Email" above the image. That's just the title element in the html head.
+No preferance whether it's useful to display this html title or not and whether it should have the same background color etc. as the body ^^
+
+**Screenshots**
+![Screenshot_20200920-021449_K-9_Mail](https://user-images.githubusercontent.com/5685512/93691590-842aac80-fae7-11ea-91c8-dc6b289bd510.jpg)
+![Screenshot_20200920-021452_K-9_Mail](https://user-images.githubusercontent.com/5685512/93691593-85f47000-fae7-11ea-9ac6-35bffb46f06b.jpg)
+
+
+**Environment (please complete the following information):**
+ - K-9 Mail version: [e.g. 5.600]
+ - Android version: 10
+ - Device: Oneplus 3T
+ - Account type: IMAP
+
+
+Comments:
+Comment#1:
+The HTML starts like this:
+
+```html
+<table cellpadding="0" cellspacing="0" width="100%" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"></td></tr></table>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+  <head>
+    [...]
+    <title>Disney+ Email
+    </title>
+  </head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0"         style="width:100% !important;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;margin-top:0;margin-bottom:0;margin-right:0;margin-left:0;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;background-color:#ffffff;background-image:none;background-repeat:repeat;background-position:top left;background-attachment:scroll;"><style type="text/css">
+div.preheader 
+{ display: none !important; } 
+</style>
+
+[...]
+```
+
+This is clearly broken. We won't invest any time trying to add special support for this.
+---
+Comment#2:
+What are you talking about, the table at the top with no content? ^^
+Probably a workaround for one mail client. I wouldn't consider it broken, even though I don't like it, but html mail in general is ugly so what can you do?
+
+The easiest thing to do: don't parse anything outside of the html tags (except the doctype)
+---
+Comment#3:
+maybe they forgot to remove it and got the code from here or it has to do with that framework
+https://salesforce.stackexchange.com/questions/141203/sfmc-wrapping-content-blocks-with-div
+---
+Comment#4:
+I removed the table, saved the file, opened it in thunderbird and forwarded it to myself in order to to open it with K9 on my smartphone, same issue
+[disney+.zip](https://github.com/k9mail/k-9/files/5251121/disney%2B.zip)
+
+ok it's not exactly the same file, because thunderbird removed lots of stuff from the header like the title (maybe other places, too) and encoded it as quoted-printable, but the issue with the padding remains (top, left, bottom).
+
+---
+Comment#5:
+interesting, thunderbird now has a similar padding for the mail I changed while the original mail shows no padding in Thunderbird.
+
+If you don't want to investigate further, then I fully appreciate that.
+I want to apologize for the spam in this thread.
+---
+Comment#6:
+I looked into this some more. The "Disney+ Email" text is showing because the `<table>` tag starts the body and everything that is meant to be part of `<head>` ends up in the body, including the `<title>` element. Because `<title>` is not on our list of allowed tags for the body, it is filtered out and only the text remains.
+Interestingly browsers' default stylesheet contains a rule to hide the contents of title elements. See [this blog post](https://mathiasbynens.be/notes/css-hidden-elements). If we don't filter out `<title>` tags the text will be hidden. I see no harm in making that change.
+
+The second issue is that we discard all attributes from the `<body>` element. That's not good and something we will fix as well.
+
+But even with these changes there will remain a tiny gap at the top for now. That's because of the layout of the message view screen. We'll get to overhauling that eventually.
+---
+Comment#7:
+Thank you for taking a look :)
+---
